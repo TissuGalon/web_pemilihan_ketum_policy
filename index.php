@@ -4,9 +4,9 @@
 <head>
 
     <meta charset="utf-8" />
-    <title>Shared on THEMELOCK.COM - Dashboard | Silva - Responsive Admin Dashboard Template</title>
+    <title>UKM POLICY - Pemilihan Ketum</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc." />
+    <meta name="description" content="UKM POLICY - Pemilihan Ketum" />
     <meta name="author" content="Zoyothemes" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
@@ -149,49 +149,49 @@
                                         $query1 = mysqli_query($conn, "SELECT * FROM kandidat");
                                         while ($row = mysqli_fetch_array($query1)) {
                                             ?>
-                                                                                                    <!-- List Item -->
-                                                                                                    <li class="list-group-item">
-                                                                                                        <div class="d-flex justify-content-between">
+                                                                                                            <!-- List Item -->
+                                                                                                            <li class="list-group-item">
+                                                                                                                <div class="d-flex justify-content-between">
 
-                                                                                                            <div class="flex-grow-0 align-self-center me-3">
-                                                                                                                <span>
-                                                                                                                    <?php echo $no++ ?>.
-                                                                                                                </span>
-                                                                                                            </div>
-
-                                                                                                            <div class="flex-shrink-0 align-self-center">
-                                                                                                                <!-- Avatar -->
-                                                                                                                <div
-                                                                                                                    class="align-content-center text-center border border-dashed rounded-circle p-1">
-                                                                                                                    <img src="proses/uploads/<?php echo $row['photo'] ?>"
-                                                                                                                        class="avatar avatar-sm rounded-circle">
-                                                                                                                </div>
-                                                                                                                <!-- End Avatar -->
-                                                                                                            </div>
-
-                                                                                                            <div class="flex-grow-1 ms-3 align-content-center">
-                                                                                                                <div class="row">
-                                                                                                                    <div class="col-7 col-md-5">
-                                                                                                                        <h6 class="mb-1 text-black fs-15">
-                                                                                                                            <?php echo $row['name'] ?>
-                                                                                                                        </h6>
+                                                                                                                    <div class="flex-grow-0 align-self-center me-3">
+                                                                                                                        <span>
+                                                                                                                            <?php echo $no++ ?>.
+                                                                                                                        </span>
                                                                                                                     </div>
-                                                                                                                </div>
-                                                                                                                <!-- End Row -->
-                                                                                                            </div>
 
-                                                                                                            <div class="flex-grow-2 ms-3 align-content-center">
-                                                                                                                <div class="btn btn-sm btn-danger" data-bs-toggle="tooltip"
-                                                                                                                    data-bs-original-title="Delete"
-                                                                                                                    onclick="hapusKandidat(<?php echo $row['id'] ?>)">
-                                                                                                                    <a aria-label="anchor" class="">
-                                                                                                                        <i class="mdi mdi-delete fs-16 text-white"></i>
-                                                                                                                    </a>
-                                                                                                                </div>
-                                                                                                            </div>
+                                                                                                                    <div class="flex-shrink-0 align-self-center">
+                                                                                                                        <!-- Avatar -->
+                                                                                                                        <div
+                                                                                                                            class="align-content-center text-center border border-dashed rounded-circle p-1">
+                                                                                                                            <img src="proses/uploads/<?php echo $row['photo'] ?>"
+                                                                                                                                class="avatar avatar-sm rounded-circle">
+                                                                                                                        </div>
+                                                                                                                        <!-- End Avatar -->
+                                                                                                                    </div>
 
-                                                                                                        </div>
-                                                                                                    </li>
+                                                                                                                    <div class="flex-grow-1 ms-3 align-content-center">
+                                                                                                                        <div class="row">
+                                                                                                                            <div class="col-7 col-md-5">
+                                                                                                                                <h6 class="mb-1 text-black fs-15">
+                                                                                                                                    <?php echo $row['name'] ?>
+                                                                                                                                </h6>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                        <!-- End Row -->
+                                                                                                                    </div>
+
+                                                                                                                    <div class="flex-grow-2 ms-3 align-content-center">
+                                                                                                                        <div class="btn btn-sm btn-danger" data-bs-toggle="tooltip"
+                                                                                                                            data-bs-original-title="Delete"
+                                                                                                                            onclick="hapusKandidat(<?php echo $row['id'] ?>)">
+                                                                                                                            <a aria-label="anchor" class="">
+                                                                                                                                <i class="mdi mdi-delete fs-16 text-white"></i>
+                                                                                                                            </a>
+                                                                                                                        </div>
+                                                                                                                    </div>
+
+                                                                                                                </div>
+                                                                                                            </li>
                                         <?php } ?>
 
                                         <li class="list-group-item">
@@ -462,25 +462,25 @@
                                                                 $query2 = mysqli_query($conn, "SELECT * FROM kandidat");
                                                                 while ($row2 = mysqli_fetch_array($query2)) {
                                                                     ?>
-                                                                                                                            <li class="list-item mb-2 align-self-center">
-                                                                                                                                <div
-                                                                                                                                    class="d-flex align-items-center justify-content-between fs-15">
-                                                                                                                                    <div class="">
-                                                                                                                                        <svg xmlns="http://www.w3.org/2000/svg"
-                                                                                                                                            width="20" height="20"
-                                                                                                                                            viewBox="0 0 16 16" class="me-0">
-                                                                                                                                            <path fill="#2786f1"
-                                                                                                                                                d="M4 8a4 4 0 1 1 8 0a4 4 0 0 1-8 0m4-2.5a2.5 2.5 0 1 0 0 5a2.5 2.5 0 0 0 0-5" />
-                                                                                                                                        </svg>
-                                                                                                                                        <span class="text-black fw-normal">
-                                                                                                                                            <?php echo $row2['name'] ?>
-                                                                                                                                        </span>
-                                                                                                                                    </div>
-                                                                                                                                    <p class="mb-0 text-muted">
-                                                                                                                                        <?php echo $row2['dipilih'] ?>
-                                                                                                                                    </p>
-                                                                                                                                </div>
-                                                                                                                            </li>
+                                                                                                                                    <li class="list-item mb-2 align-self-center">
+                                                                                                                                        <div
+                                                                                                                                            class="d-flex align-items-center justify-content-between fs-15">
+                                                                                                                                            <div class="">
+                                                                                                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                                                                                    width="20" height="20"
+                                                                                                                                                    viewBox="0 0 16 16" class="me-0">
+                                                                                                                                                    <path fill="#2786f1"
+                                                                                                                                                        d="M4 8a4 4 0 1 1 8 0a4 4 0 0 1-8 0m4-2.5a2.5 2.5 0 1 0 0 5a2.5 2.5 0 0 0 0-5" />
+                                                                                                                                                </svg>
+                                                                                                                                                <span class="text-black fw-normal">
+                                                                                                                                                    <?php echo $row2['name'] ?>
+                                                                                                                                                </span>
+                                                                                                                                            </div>
+                                                                                                                                            <p class="mb-0 text-muted">
+                                                                                                                                                <?php echo $row2['dipilih'] ?>
+                                                                                                                                            </p>
+                                                                                                                                        </div>
+                                                                                                                                    </li>
                                                                 <?php } ?>
 
 
@@ -501,53 +501,53 @@
                                                                         if ($query3) {
                                                                             while ($row3 = mysqli_fetch_array($query3)) {
                                                                                 ?>
-                                                                                                                                                                                                                                                        <li id="terpilih" class="list-group-item">
-                                                                                                                                                                                                                                                            <div class="d-flex justify-content-between">
+                                                                                                                                                                                                                                                                                <li id="terpilih" class="list-group-item">
+                                                                                                                                                                                                                                                                                    <div class="d-flex justify-content-between">
 
-                                                                                                                                                                                                                                                                <div
-                                                                                                                                                                                                                                                                    class="flex-grow-0 align-self-center me-3">
-                                                                                                                                                                                                                                                                    <span>1.</span>
-                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                                        <div
+                                                                                                                                                                                                                                                                                            class="flex-grow-0 align-self-center me-3">
+                                                                                                                                                                                                                                                                                            <span>1.</span>
+                                                                                                                                                                                                                                                                                        </div>
 
-                                                                                                                                                                                                                                                                <div
-                                                                                                                                                                                                                                                                    class="flex-shrink-0 align-self-center">
-                                                                                                                                                                                                                                                                    <!-- Avatar -->
-                                                                                                                                                                                                                                                                    <div
-                                                                                                                                                                                                                                                                        class="align-content-center text-center border border-dashed rounded-circle p-1">
-                                                                                                                                                                                                                                                                        <img src="proses/uploads/<?php echo $row3['photo'] ?>"
-                                                                                                                                                                                                                                                                            class="avatar avatar-sm rounded-circle">
-                                                                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                                                                    <!-- End Avatar -->
-                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                                        <div
+                                                                                                                                                                                                                                                                                            class="flex-shrink-0 align-self-center">
+                                                                                                                                                                                                                                                                                            <!-- Avatar -->
+                                                                                                                                                                                                                                                                                            <div
+                                                                                                                                                                                                                                                                                                class="align-content-center text-center border border-dashed rounded-circle p-1">
+                                                                                                                                                                                                                                                                                                <img src="proses/uploads/<?php echo $row3['photo'] ?>"
+                                                                                                                                                                                                                                                                                                    class="avatar avatar-sm rounded-circle">
+                                                                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                                                                            <!-- End Avatar -->
+                                                                                                                                                                                                                                                                                        </div>
 
-                                                                                                                                                                                                                                                                <div
-                                                                                                                                                                                                                                                                    class="flex-grow-1 ms-3 align-content-center">
-                                                                                                                                                                                                                                                                    <div class="row">
-                                                                                                                                                                                                                                                                        <div class="col-7 col-md-5">
-                                                                                                                                                                                                                                                                            <h6
-                                                                                                                                                                                                                                                                                class="mb-1 text-black fs-15">
-                                                                                                                                                                                                                                                                                <?php echo $row3['name'] ?>
-                                                                                                                                                                                                                                                                            </h6>
-                                                                                                                                                                                                                                                                        </div>
-                                                                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                                                                    <!-- End Row -->
-                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                                        <div
+                                                                                                                                                                                                                                                                                            class="flex-grow-1 ms-3 align-content-center">
+                                                                                                                                                                                                                                                                                            <div class="row">
+                                                                                                                                                                                                                                                                                                <div class="col-7 col-md-5">
+                                                                                                                                                                                                                                                                                                    <h6
+                                                                                                                                                                                                                                                                                                        class="mb-1 text-black fs-15">
+                                                                                                                                                                                                                                                                                                        <?php echo $row3['name'] ?>
+                                                                                                                                                                                                                                                                                                    </h6>
+                                                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                                                                            <!-- End Row -->
+                                                                                                                                                                                                                                                                                        </div>
 
-                                                                                                                                                                                                                                                                <div
-                                                                                                                                                                                                                                                                    class="flex-grow-2 ms-3 align-content-center">
-                                                                                                                                                                                                                                                                    <div class="btn btn-sm btn-danger"
-                                                                                                                                                                                                                                                                        data-bs-toggle="tooltip"
-                                                                                                                                                                                                                                                                        data-bs-original-title="Delete">
-                                                                                                                                                                                                                                                                        <a aria-label="anchor" class="">
-                                                                                                                                                                                                                                                                            <i
-                                                                                                                                                                                                                                                                                class="mdi mdi-delete fs-16 text-white"></i>
-                                                                                                                                                                                                                                                                        </a>
-                                                                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                                        <div
+                                                                                                                                                                                                                                                                                            class="flex-grow-2 ms-3 align-content-center">
+                                                                                                                                                                                                                                                                                            <div class="btn btn-sm btn-danger"
+                                                                                                                                                                                                                                                                                                data-bs-toggle="tooltip"
+                                                                                                                                                                                                                                                                                                data-bs-original-title="Delete">
+                                                                                                                                                                                                                                                                                                <a aria-label="anchor" class="">
+                                                                                                                                                                                                                                                                                                    <i
+                                                                                                                                                                                                                                                                                                        class="mdi mdi-delete fs-16 text-white"></i>
+                                                                                                                                                                                                                                                                                                </a>
+                                                                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                                                                        </div>
 
-                                                                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                                                        </li>
-                                                                                                                                                                                            <?php }
+                                                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                            <?php }
                                                                         }
                                                                     } ?>
                                                                 </div>
