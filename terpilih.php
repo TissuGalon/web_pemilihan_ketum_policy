@@ -20,15 +20,7 @@
     <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        /* Membuat gambar dalam card menjadi persegi dan responsif */
-        .card-img-top {
-            object-fit: cover;
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            /* Membuat rasio gambar 1:1 */
-        }
-    </style>
+
 </head>
 
 <!-- body start -->
@@ -130,112 +122,42 @@
         <div class="content-page">
             <div class="content">
 
-                <!-- Start Content-->
-                <div class="container-fluid">
-
-                    <br>
-
-                    <?php
-                    require_once 'proses/koneksi.php';
-                    $queryjumlah = mysqli_query($conn, "SELECT SUM(dipilih) FROM kandidat");
-                    $row = mysqli_fetch_array($queryjumlah);
-                    $jumlah_suara = 0;
-                    if ($queryjumlah) {
-                        $jumlah_suara += $row[0];
+            <?php
+            require_once 'proses/koneksi.php';
+            $hasil = [];
+            $query4 = mysqli_query($conn, "SELECT SUM(dipilih) FROM kandidat");
+            $cek4 = mysqli_fetch_array($query4);
+            if ($cek4[0] > 0) {
+                $query3 = mysqli_query($conn, "SELECT * FROM kandidat WHERE dipilih = (SELECT MAX(dipilih) FROM kandidat);");
+                if ($query3) {
+                    while ($row3 = mysqli_fetch_array($query3)) {
+                        $hasil = $row3;
                     }
-                    ?>
+                }
+            }
+            ?>
+            
 
-                    <div class="row">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between">
-                                    <h5 class="card-title mb-0">PILIH KANDIDAT</h5>
-                                    <div class="d-flex">
-                                        <b>
-                                            <h2 class="card-title mb-0 me-2 text-primary" id="jumlah_suara"><?php echo $jumlah_suara; ?></h2>
-                                        </b>
-                                        <h2 class="card-title mb-0">Total Jumlah Suara</h2>
-                                    </div>
+                <div class="container-fluid">
+                    <div class="row justify-content-center m-3" id="kandidatContainer">
+                        <div class="col-md-6 mb-4">
+                            <div class="card">
+                                <div class="card-header text-center bg-primary">
+                                    <h3 class="text-white">🎉 Selamat kepada Ketua Umum Terpilih! 🎉</h3>
+                                </div>
+                                <div class="d-flex justify-content-center mt-3">
+                                    <img src="proses/uploads/<?php echo $hasil['photo'] ?>" class="card-img-top rounded"
+                                        alt="Muhammad Rafli"
+                                        style="width: 100%; max-width: 400px; height: 400px; object-fit: cover;">
+                                </div>
+                                <div class="card-body text-center">
+                                    <h3 class="text-black fw-bold"><?php echo strtoupper($hasil['name']); ?></h3>
                                 </div>
                             </div>
                         </div>
-                        <div class="row" id="kandidatContainer"></div>
                     </div>
+                </div>
 
-                    <script>
-                        // Fungsi untuk mengambil data kandidat dari server
-                        async function fetchKandidatData() {
-                            const response = await fetch('proses/get_data_kandidat.php');
-                            const data = await response.json();
-                            return data;
-                        }
-
-                        // Fungsi untuk menampilkan kandidat dalam bentuk card
-                        async function displayKandidat() {
-                            const kandidatContainer = document.getElementById('kandidatContainer');
-                            const kandidatData = await fetchKandidatData();
-
-                            kandidatData.forEach((kandidat) => {
-                                const card = document.createElement('div');
-                                card.className = 'col-md-4 mb-4'; // Mengatur 3 card per baris di layar medium dan besar
-                                card.innerHTML = `
-                    <div class="card" style="cursor: pointer;" onclick="pilihKandidat(${kandidat.id}, '${kandidat.name}')">
-                        <img src="proses/uploads/${kandidat.photo}" class="card-img-top rounded" alt="${kandidat.name}" style="overflow:hidden; height:100;">
-                        <div class="card-body text-center">
-                            <b><h3 class="text-black">${kandidat.name.toUpperCase()}</h3></b>
-                        </div>
-                    </div>
-                `;
-                                kandidatContainer.appendChild(card);
-                            });
-                        }
-
-                        // Fungsi untuk memilih kandidat dan menambah suara
-                        function pilihKandidat(id, name) {
-                            Swal.fire({
-                                title: `Pilih ${name}?`,
-                                text: "Apakah Anda yakin ingin memilih kandidat ini?",
-                                icon: 'question',
-                                showCancelButton: true,
-                                confirmButtonText: 'Ya, pilih!',
-                                cancelButtonText: 'Batal'
-                            }).then((result) => {
-                                if (result.isConfirmed) {
-                                    // Mengirimkan request AJAX tanpa berpindah halaman
-                                    fetch(`proses/tambah_suara.php?id=${id}`)
-                                        .then(response => response.json())
-                                        .then(data => {
-                                            // Menampilkan pesan berdasarkan status dari server
-                                            if (data.status === 'success') {
-                                                Swal.fire('Sukses!', data.message, 'success')
-                                                    .then(() => {
-                                                        let jumlah_suara = parseInt(document.getElementById(`jumlah_suara`).innerText) || 0;
-                                                        document.getElementById(`jumlah_suara`).innerText = jumlah_suara + 1;
-                                                    });
-                                            } else {
-                                                Swal.fire('Gagal!', data.message, 'error');
-                                            }
-                                        })
-                                        .catch(error => {
-                                            Swal.fire('Gagal!', 'Terjadi kesalahan, coba lagi nanti.', 'error');
-                                        });
-                                }
-                            });
-                        }
-
-
-
-
-
-                        // Menampilkan kandidat ketika halaman selesai dimuat
-                        document.addEventListener('DOMContentLoaded', displayKandidat);
-                    </script>
-
-
-
-
-
-                </div> <!-- container-fluid -->
             </div> <!-- content -->
 
             <!-- Footer Start -->

@@ -149,49 +149,49 @@
                                         $query1 = mysqli_query($conn, "SELECT * FROM kandidat");
                                         while ($row = mysqli_fetch_array($query1)) {
                                             ?>
-                                                                                                                                                                                                    <!-- List Item -->
-                                                                                                                                                                                                    <li class="list-group-item">
-                                                                                                                                                                                                        <div class="d-flex justify-content-between">
+                                                <!-- List Item -->
+                                                <li class="list-group-item">
+                                                <div class="d-flex justify-content-between">
 
-                                                                                                                                                                                                            <div class="flex-grow-0 align-self-center me-3">
-                                                                                                                                                                                                                <span>
-                                                                                                                                                                                                                    <?php echo $no++ ?>.
-                                                                                                                                                                                                                </span>
-                                                                                                                                                                                                            </div>
+                                                    <div class="flex-grow-0 align-self-center me-3">
+                                                        <span>
+                                                            <?php echo $no++ ?>.
+                                                        </span>
+                                                    </div>
 
-                                                                                                                                                                                                            <div class="flex-shrink-0 align-self-center">
-                                                                                                                                                                                                                <!-- Avatar -->
-                                                                                                                                                                                                                <div
-                                                                                                                                                                                                                    class="align-content-center text-center border border-dashed rounded-circle p-1">
-                                                                                                                                                                                                                    <img src="proses/uploads/<?php echo $row['photo'] ?>"
-                                                                                                                                                                                                                        class="avatar avatar-sm rounded-circle">
-                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                                <!-- End Avatar -->
-                                                                                                                                                                                                            </div>
+                                                    <div class="flex-shrink-0 align-self-center">
+                                                        <!-- Avatar -->
+                                                        <div
+                                                            class="align-content-center text-center border border-dashed rounded-circle p-1">
+                                                            <img src="proses/uploads/<?php echo $row['photo'] ?>"
+                                                                class="avatar avatar-sm rounded-circle" style="object-fit: cover;">
+                                                        </div>
+                                                        <!-- End Avatar -->
+                                                    </div>
 
-                                                                                                                                                                                                            <div class="flex-grow-1 ms-3 align-content-center">
-                                                                                                                                                                                                                <div class="row">
-                                                                                                                                                                                                                    <div class="col-7 col-md-5">
-                                                                                                                                                                                                                        <h6 class="mb-1 text-black fs-15">
-                                                                                                                                                                                                                            <?php echo $row['name'] ?>
-                                                                                                                                                                                                                        </h6>
-                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                                <!-- End Row -->
-                                                                                                                                                                                                            </div>
+                                                    <div class="flex-grow-1 ms-3 align-content-center">
+                                                        <div class="row">
+                                                            <div class="col-7 col-md-5">
+                                                                <h6 class="mb-1 text-black fs-15">
+                                                                    <?php echo $row['name'] ?>
+                                                                </h6>
+                                                            </div>
+                                                        </div>
+                                                        <!-- End Row -->
+                                                    </div>
 
-                                                                                                                                                                                                            <div class="flex-grow-2 ms-3 align-content-center">
-                                                                                                                                                                                                                <div class="btn btn-sm btn-danger" data-bs-toggle="tooltip"
-                                                                                                                                                                                                                    data-bs-original-title="Delete"
-                                                                                                                                                                                                                    onclick="hapusKandidat(<?php echo $row['id'] ?>)">
-                                                                                                                                                                                                                    <a aria-label="anchor" class="">
-                                                                                                                                                                                                                        <i class="mdi mdi-delete fs-16 text-white"></i>
-                                                                                                                                                                                                                    </a>
-                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                            </div>
+                                                    <div class="flex-grow-2 ms-3 align-content-center">
+                                                        <div class="btn btn-sm btn-danger" data-bs-toggle="tooltip"
+                                                            data-bs-original-title="Delete"
+                                                            onclick="hapusKandidat(<?php echo $row['id'] ?>)">
+                                                            <a aria-label="anchor" class="">
+                                                                <i class="mdi mdi-delete fs-16 text-white"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
 
-                                                                                                                                                                                                        </div>
-                                                                                                                                                                                                    </li>
+                                                </div>
+                                                </li>
                                         <?php } ?>
 
                                         <li class="list-group-item">
@@ -464,27 +464,27 @@
                                                                 while ($row2 = mysqli_fetch_array($query2)) {
                                                                     $totalsuara += $row2['dipilih'];
                                                                     ?>
-                                                                                                                                        <li class="list-item mb-2 align-self-center">
-                                                                                                                                            <div
-                                                                                                                                                class="row fs-15">
-                                                                                                                                                <div class="col-12 col-md-6">
-                                                                                                                                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                                                                                                                                        width="20" height="20"
-                                                                                                                                                        viewBox="0 0 16 16" class="me-0">
-                                                                                                                                                        <path fill="#2786f1"
-                                                                                                                                                            d="M4 8a4 4 0 1 1 8 0a4 4 0 0 1-8 0m4-2.5a2.5 2.5 0 1 0 0 5a2.5 2.5 0 0 0 0-5" />
-                                                                                                                                                    </svg>
-                                                                                                                                                    <span class="text-black fw-normal">
-                                                                                                                                                        <?php echo $row2['name'] ?>
-                                                                                                                                                    </span>
-                                                                                                                                                </div>
-                                                                                                                                                <div class="col-12 col-md-6">
-                                                                                                                                                    <p class="mb-0 text-muted">
-                                                                                                                                                    <?php echo $row2['dipilih'] ?> Suara
-                                                                                                                                                </p>
-                                                                                                                                                </div>
-                                                                                                                                            </div>
-                                                                                                                                        </li>
+                                                                            <li class="list-item mb-2 align-self-center">
+                                                                                <div
+                                                                                    class="row fs-15">
+                                                                                    <div class="col-12 col-md-6">
+                                                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                            width="20" height="20"
+                                                                                            viewBox="0 0 16 16" class="me-0">
+                                                                                            <path fill="#2786f1"
+                                                                                                d="M4 8a4 4 0 1 1 8 0a4 4 0 0 1-8 0m4-2.5a2.5 2.5 0 1 0 0 5a2.5 2.5 0 0 0 0-5" />
+                                                                                        </svg>
+                                                                                        <span class="text-black fw-normal">
+                                                                                            <?php echo $row2['name'] ?>
+                                                                                        </span>
+                                                                                    </div>
+                                                                                    <div class="col-12 col-md-6">
+                                                                                        <p class="mb-0 text-muted">
+                                                                                        <?php echo $row2['dipilih'] ?> Suara
+                                                                                    </p>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </li>
                                                                 <?php } ?>
 
 
@@ -492,77 +492,13 @@
 
                                                             <h3 class="fs-18 fw-semibold text-black mt-3 d-flex"><div class="text-primary me-2"><?php echo $totalsuara; ?></div> Total Suara
                                                             </h3>
-
+                                                            <br>
+                                                            <?php if ($totalsuara > 0) { ?>
+                                                                <a href="terpilih.php" class="btn btn-primary col-12">Lihat Kandidat Terpilih</a>
+                                                            <?php } ?>
                                                             
                                                         </div>
-                                                        <div class="m-3"></div>
-                                                        <div class="col-xxl-12">
-                                                            <div class="card">
-                                                                <div class="card-header bg-primary">
-                                                                    <span class="text-white">Kandidat Terpilih</span>
-                                                                </div>
-                                                                <div class="card-body">
-                                                                    <?php
-                                                                    $no = 1;
-                                                                    $query4 = mysqli_query($conn, "SELECT SUM(dipilih) FROM kandidat");
-                                                                    $cek4 = mysqli_fetch_array($query4);
-                                                                    if ($cek4[0] > 0) {
-                                                                        $query3 = mysqli_query($conn, "SELECT * FROM kandidat WHERE dipilih = (SELECT MAX(dipilih) FROM kandidat);");
-                                                                        if ($query3) {
-                                                                            while ($row3 = mysqli_fetch_array($query3)) {
-                                                                                ?>
-                                                                    <li id="terpilih" class="list-group-item">
-                                                                        <div class="d-flex justify-content-between">
-
-                                                                            <div
-                                                                                class="flex-grow-0 align-self-center me-3">
-                                                                                <span><?php echo $no++; ?>.</span>
-                                                                            </div>
-
-                                                                            <div
-                                                                                class="flex-shrink-0 align-self-center">
-                                                                                <!-- Avatar -->
-                                                                                <div
-                                                                                    class="align-content-center text-center border border-dashed rounded-circle p-1">
-                                                                                    <img src="proses/uploads/<?php echo $row3['photo'] ?>"
-                                                                                        class="avatar avatar-sm rounded-circle">
-                                                                                </div>
-                                                                                <!-- End Avatar -->
-                                                                            </div>
-
-                                                                            <div
-                                                                                class="flex-grow-1 ms-3 align-content-center">
-                                                                                <div class="row">
-                                                                                    <div class="col-7 col-md-5">
-                                                                                        <h6
-                                                                                            class="mb-1 text-black fs-15">
-                                                                                            <?php echo $row3['name'] ?>
-                                                                                        </h6>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <!-- End Row -->
-                                                                            </div>
-
-                                                                            <div
-                                                                                class="flex-grow-2 ms-3 align-content-center">
-                                                                                <div class="btn btn-sm btn-danger"
-                                                                                    data-bs-toggle="tooltip"
-                                                                                    data-bs-original-title="Delete">
-                                                                                    <a aria-label="anchor" class="">
-                                                                                        <i
-                                                                                            class="mdi mdi-delete fs-16 text-white"></i>
-                                                                                    </a>
-                                                                                </div>
-                                                                            </div>
-
-                                                                        </div>
-                                                                    </li>
-                                                <?php }
-                                                                        }
-                                                                    } ?>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                    
                                                     </div>
                                                 </div>
                                             </div>
